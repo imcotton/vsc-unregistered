@@ -2,10 +2,14 @@
   "name": "unregistered",
   "displayName": "unregistered",
   "description": "This is an unregistered copy",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "publisher": "cottonh",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/imcotton/vsc-unregistered.git"
+  },
   "engines": {
-    "vscode": "^1.28.0"
+    "vscode": "^1.10.0"
   },
   "categories": [
     "Other"
