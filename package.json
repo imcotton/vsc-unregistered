@@ -8,6 +8,7 @@
     "type" : "git",
     "url" : "https://github.com/imcotton/vsc-unregistered.git"
   },
+  "license": "MIT",
   "engines": {
     "vscode": "^1.10.0"
   },
