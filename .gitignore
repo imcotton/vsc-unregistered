@@ -1,0 +1,9 @@
+node_modules
+.vscode-test/
+*.vsix
+
+# IDE - VSCode
+.vscode/*
+!.vscode/tasks.json
+!.vscode/launch.json
+
