@@ -60,7 +60,7 @@ function Controller (MAX = 42) {
         subscriptions.dispose();
     }
 
-    function onEvent (event) {
+    async function onEvent (event) {
 
         if (event.kind !== vscode.TextEditorSelectionChangeKind.Keyboard) {
             return;
@@ -72,15 +72,15 @@ function Controller (MAX = 42) {
             return;
         }
 
-        const prompt = vscode.window.showWarningMessage(message, { modal: true }, 'Purchase');
-
         count = 0;
 
-        prompt.then(resolution => {
-            if (resolution === 'Purchase') {
-                vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(link));
-            }
-        });
+        const resolution = await vscode.window.showWarningMessage(message, { modal: true }, 'Purchase');
+
+        if (resolution !== 'Purchase') {
+            return;
+        }
+
+        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(link));
 
     }
 
