@@ -8,6 +8,9 @@ const vscode = require('vscode');
 
 
 
+/**
+ * @param {vscode.ExtensionContext} context
+ */
 exports.activate = function (context) {
     context.subscriptions.push(Controller(1000));
 };
@@ -60,6 +63,9 @@ function Controller (MAX = 42) {
         subscriptions.dispose();
     }
 
+    /**
+     * @param {vscode.TextEditorSelectionChangeEvent} event
+     */
     async function onEvent (event) {
 
         if (event.kind !== vscode.TextEditorSelectionChangeKind.Keyboard) {
