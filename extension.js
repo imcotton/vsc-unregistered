@@ -86,7 +86,7 @@ function Controller (MAX = 42) {
             return;
         }
 
-        vscode.commands.executeCommand('vscode.open', vscode.Uri.parse(link));
+        vscode.env.openExternal(vscode.Uri.parse(link));
 
     }
 
